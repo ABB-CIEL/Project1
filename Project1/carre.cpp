@@ -50,3 +50,8 @@ void CCarre::Deplacer(char direction, int saut) {
         break;
     }
 }
+
+void CCarre::Deplacer(int dx, int dy) {
+    sx += dx; // Ajout de dx aux coordonnées x
+    sy += dy; // Ajout de dy aux coordonnées y
+}

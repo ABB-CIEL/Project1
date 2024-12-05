@@ -9,7 +9,6 @@ private:
     unsigned int cote;  // Longueur du côté
 
 public:
-    // Déclarations des méthodes
     void Setsx(int sx1);                   // Définir la valeur de sx
     void Setsy(int sy1);                   // Définir la valeur de sy
     void Setcote(unsigned int cote1);      // Définir la valeur de cote
@@ -20,5 +19,6 @@ public:
 
     void Afficher();                       // Afficher les caractéristiques du carré
 
-    void Deplacer(char direction, int saut); // Déplacer le carré selon une direction et un saut
+    void Deplacer(char direction, int saut); // Déplacer selon une direction et un saut
+    void Deplacer(int dx, int dy);           // Surcharge : déplacer selon un vecteur
 };

@@ -1,43 +1,24 @@
 #pragma once
-// Déclaration de la classe point
-class CCarre
-{
-    // Déclaration des attributs privés
+#include <iostream>
+
+// Déclaration de la classe CCarre
+class CCarre {
 private:
     int sx;    // Coordonnée x
     int sy;    // Coordonnée y
-   unsigned int  cote;  // Longueur du côté
+    unsigned int cote;  // Longueur du côté
 
-// Déclaration des méthodes publiques
 public:
+    // Déclarations des méthodes
+    void Setsx(int sx1);                   // Définir la valeur de sx
+    void Setsy(int sy1);                   // Définir la valeur de sy
+    void Setcote(unsigned int cote1);      // Définir la valeur de cote
 
-    // Procédure pour définir la valeur de sx
-    void Setsx(int sx1);
+    int Getsx();                           // Obtenir la valeur de sx
+    int Getsy();                           // Obtenir la valeur de sy
+    unsigned int GetCote();                // Obtenir la valeur de cote
 
+    void Afficher();                       // Afficher les caractéristiques du carré
 
-    // Procédure pour définir la valeur de sy
-    void Setsy(int sy1);
-
-
-    // Procédure pour définir la valeur de cote
-    void Setcote(unsigned int cote1);
-    // Retourner la valeur de sx
-    int Getsx();
-
-    // Fonction pour obtenir la valeur de sy
-    int Getsy();
-
-    // Getter for cote
-    unsigned int GetCote();
-
-    // Fonction pour obtenir la valeur de cote
-    void Afficher();
-
-    // Procédure pour déplacer le carré selon une direction et un saut
-    void deplacer(char direction, int saut); 
-    // Procédure pour déplacer le carré à une position donnée
-    void deplacer(int sx, int dy);          // Move to a new x, y position
-
-    
-
+    void Deplacer(char direction, int saut); // Déplacer le carré selon une direction et un saut
 };

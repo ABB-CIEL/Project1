@@ -15,18 +15,6 @@ void CCarre::Setcote(unsigned int cote1) {
     this->cote = cote1;
 }
 
-void CCarre::Afficher() {
-    cout << "Carre de sommet(" << sx << "," << sy << ") avec cote de longeur" << cote << " et surface " << cote << endl;
-}
-
-void CCarre::deplacer(char direction, int saut)
-{
-}
-
-void CCarre::deplacer(int sx, int dy)
-{
-}
-
 int CCarre::Getsx() {
     return sx;
 }
@@ -35,7 +23,30 @@ int CCarre::Getsy() {
     return sy;
 }
 
-unsigned int CCarre::GetCote()
-{
+unsigned int CCarre::GetCote() {
     return cote;
+}
+
+void CCarre::Afficher() {
+    cout << "Carre : sommet (" << sx << ", " << sy << "), cote = " << cote << endl;
+}
+
+void CCarre::Deplacer(char direction, int saut) {
+    switch (direction) {
+    case 'n': // Nord
+        sy -= saut;
+        break;
+    case 's': // Sud
+        sy += saut;
+        break;
+    case 'e': // Est
+        sx += saut;
+        break;
+    case 'o': // Ouest
+        sx -= saut;
+        break;
+    default:
+        cout << "Direction invalide !" << endl;
+        break;
+    }
 }

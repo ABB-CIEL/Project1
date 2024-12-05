@@ -16,13 +16,15 @@ void CCarre::Setcote(unsigned int cote1) {
 }
 
 void CCarre::Afficher() {
-    cout << "x = " << sx << endl;
-    cout << "y = " << sy << endl;
-    cout << "cote = " << cote << endl;
+    cout << "Carre de sommet(" << sx << "," << sy << ") avec cote de longeur" << cote << " et surface " << cote << endl;
+}
 
-    cout << "x = " << Getsx() << endl;
-    cout << "y = " << Getsy() << endl;
-    cout << "cote = " << GetCote() << endl;
+void CCarre::deplacer(char direction, int saut)
+{
+}
+
+void CCarre::deplacer(int sx, int dy)
+{
 }
 
 int CCarre::Getsx() {

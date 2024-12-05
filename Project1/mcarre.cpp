@@ -5,22 +5,15 @@ using namespace std;
 
 int main() {
     int x1, y1, cote;
-
-    cout << "La valeur de x : " << endl;
-    cin >> x1;
-
-    CCarre carre;
-    carre.Setsx(x1);
-
-    cout << "La valeur de y : " << endl;
-    cin >> y1;
-    carre.Setsy(y1);
-
-    cout << "La valeur de cote : " << endl;
-    cin >> cote;
-    carre.Setcote(cote);
-
-    carre.Afficher();
-
+    CCarre c1;
+    CCarre c2;
+    c2.Afficher();
+    c2.deplacer('n', 3);
+    c1.Setsx(3);
+    c1.Setsy(15);
+    c1.Setcote(100);
+    c1.Afficher();
+    cout << "Cote:" << c1.GetCote() << endl;
+    
     return 0;
 }

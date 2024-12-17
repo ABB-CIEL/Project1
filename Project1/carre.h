@@ -1,3 +1,5 @@
+
+
 #pragma once
 #include <iostream>
 
@@ -9,16 +11,28 @@ private:
     unsigned int cote;  // Longueur du côté
 
 public:
-    void Setsx(int sx1);                   // Définir la valeur de sx
-    void Setsy(int sy1);                   // Définir la valeur de sy
-    void Setcote(unsigned int cote1);      // Définir la valeur de cote
+    // Constructeur par défaut
+    CCarre();
 
-    int Getsx();                           // Obtenir la valeur de sx
-    int Getsy();                           // Obtenir la valeur de sy
-    unsigned int GetCote();                // Obtenir la valeur de cote
+    // Constructeur paramétré
+    CCarre(int x, int y, unsigned int c);
 
-    void Afficher();                       // Afficher les caractéristiques du carré
+    // Méthodes pour modifier les valeurs
+    void Setsx(int sx1);
+    void Setsy(int sy1);
+    void Setcote(unsigned int cote1);
 
-    void Deplacer(char direction, int saut); // Déplacer selon une direction et un saut
-    void Deplacer(int dx, int dy);           // Surcharge : déplacer selon un vecteur
+    // Méthodes pour récupérer les valeurs
+    int Getsx();
+    int Getsy();
+    unsigned int GetCote();
+
+    // Afficher les caractéristiques
+    void Afficher();
+
+    // Déplacer selon une direction et un saut
+    void Deplacer(char direction, int saut);
+
+    // Déplacer selon un vecteur (dx, dy)
+    void Deplacer(int dx, int dy);
 };

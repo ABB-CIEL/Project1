@@ -78,6 +78,14 @@ int main() {
     cout << "\nDeplacement de c4 selon le vecteur (dx = -2, dy = -3)" << endl;
     c4.Deplacer(-2, -3);
     c4.Afficher();
+  
+    CCarre carres[4] = { c1, c2, c3, c4 };
+
+    for (int i = 0; i < 4; i++) {
+        cout << "\nCaractéristiques du carre " << i + 1 << " :" << endl; carres[i].Afficher();
+    }
+
+
 
     return 0;
 }

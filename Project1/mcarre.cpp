@@ -4,11 +4,10 @@
 using namespace std;
 
 int main() {
-    // Création de c1, c3, c4 avec le constructeur par défaut
-    CCarre c1, c3, c4;
-
-    // Création de c2 avec le constructeur paramétré
-    CCarre c2(15, 25, 30);
+    // Création de carrés avec le constructeur par défaut et paramétré
+    CCarre c1, c2(15, 25, 30);  // c2 est créé avec un constructeur paramétré
+    CCarre* c3 = new CCarre(25, 35, 40);  // c3 est créé dynamiquement avec new et un constructeur paramétré
+    CCarre c4;
 
     // Initialisation des caractéristiques de c1
     c1.Setsx(5);
@@ -21,13 +20,8 @@ int main() {
     cout << "\nCaractéristiques initiales de c2 (créé avec le constructeur paramétré) :" << endl;
     c2.Afficher();
 
-    // Initialisation des caractéristiques de c3
-    c3.Setsx(25);
-    c3.Setsy(35);
-    c3.Setcote(40);
-
-    cout << "\nCaractéristiques initiales de c3 :" << endl;
-    c3.Afficher();
+    cout << "\nCaractéristiques initiales de c3 (créé dynamiquement avec new et le constructeur paramétré) :" << endl;
+    c3->Afficher();
 
     // Initialisation des caractéristiques de c4
     c4.Setsx(35);
@@ -59,13 +53,13 @@ int main() {
 
     // Test de la méthode Deplacer avec c3
     cout << "\nDéplacement de c3 vers le sud avec un saut de 2..." << endl;
-    c3.Deplacer('s', 2);
-    c3.Afficher();
+    c3->Deplacer('s', 2);
+    c3->Afficher();
 
     // Test de la méthode surchargée Deplacer avec un vecteur pour c3
     cout << "\nDéplacement de c3 selon le vecteur (dx = 1, dy = 1)..." << endl;
-    c3.Deplacer(1, 1);
-    c3.Afficher();
+    c3->Deplacer(1, 1);
+    c3->Afficher();
 
     // Test de la méthode Deplacer avec c4
     cout << "\nDéplacement de c4 vers l'ouest avec un saut de 4..." << endl;
@@ -77,13 +71,17 @@ int main() {
     c4.Deplacer(-2, -3);
     c4.Afficher();
 
-    // Tableau de carrés
-    CCarre carres[4] = { c1, c2, c3, c4 };
+    // Création d'un tableau d'objets CCarre
+    CCarre carres[4] = { c1, c2, *c3, c4 };  // Passer *c3 car c3 est un pointeur
 
+    // Affichage des caractéristiques de chaque carré
     for (int i = 0; i < 4; i++) {
         cout << "\nCaractéristiques du carré " << i + 1 << " :" << endl;
         carres[i].Afficher();
     }
+
+    // Libération de la mémoire allouée dynamiquement pour c3
+    delete c3;
 
     return 0;
 }
